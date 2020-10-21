@@ -25,15 +25,3 @@ function createLine(txt, size, align, color,id,idx){
     gMeme.selectedLineIdx = idx;
 }
 
-// function createText(txt, size, align, color) {
-//     gMeme.lines.push({
-//         txt,
-//         size,
-//         align,
-//         color
-//     });
-// }
-
-// function getMeme(){
-//     return gMeme;
-// }

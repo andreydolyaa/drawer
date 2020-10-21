@@ -60,6 +60,22 @@ function onAddText() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // function getCurrLinePos(event){
 //     gCurrLineIdx.x = event.offsetX;
 //     gCurrLineIdx.y = event.offsetY;
