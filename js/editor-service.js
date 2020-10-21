@@ -2,16 +2,16 @@
 
 
 var gMeme;
-
 createMeme();
 
 
-function createMeme(imgId) {
+function createMeme() {
     gMeme = {
-        selectedImgId: imgId,
+        selectedImgId: null,
         selectedLineIdx: 0,
         lines: [
-            { txt: 'hello', size: 48, align: 'center', innerColor: 'white', strokeColor: 'red', x: 255, y: 100 },
+            { txt: 'nice ', size: 48, align: 'center', innerColor: 'white', strokeColor: 'red', x: 255, y: 100 },
+            { txt: 'sprint X_X', size: 48, align: 'center', innerColor: 'white', strokeColor: 'red', x: 255, y: 420 },
         ]
     }
 }
@@ -36,6 +36,13 @@ function getPosition() {
     }
 }
 
+function focusText() {
+    gMeme.selectedLineIdx++
+    if (gMeme.selectedLineIdx === gMeme.lines.length) {
+        gMeme.selectedLineIdx = 0;
+    }
+}
+
 function getFontSize() {
     return gMeme.lines[gMeme.selectedLineIdx].size;
 }
@@ -44,19 +51,19 @@ function increaseFont() {
     gMeme.lines[gMeme.selectedLineIdx].size += 10;
 }
 
-function decreaseFont(){
+function decreaseFont() {
     gMeme.lines[gMeme.selectedLineIdx].size -= 10;
 }
 
-function moveTextUp(){
+function moveTextUp() {
     gMeme.lines[gMeme.selectedLineIdx].y -= 5;
 }
 
-function moveTextDown(){
+function moveTextDown() {
     gMeme.lines[gMeme.selectedLineIdx].y += 5;
 }
 
-function deleteText(){
+function deleteText() {
     gMeme.lines[gMeme.selectedLineIdx].txt = '';
 }
 

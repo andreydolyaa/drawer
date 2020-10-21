@@ -7,6 +7,7 @@ var gCurrImgId;
 
 function renderMeme() {
     drawImg();
+    drawFocus();
     var meme = getMeme();
     meme.lines.forEach(function (line) {
         var txt = line.txt;
@@ -85,6 +86,24 @@ function onDeleteText(){
     renderMeme();
 }
 
+function onFocusText(){
+    focusText();
+    renderMeme();
+}
+
+function drawFocus(){
+    var position = getPosition();
+    drawRect(position.x,position.y);
+    console.log(position.x,position.y);
+}
+
+
+function drawRect(x, y) {
+    gCtx.beginPath()
+    gCtx.rect(x/2, y/2, x,y)
+    gCtx.strokeStyle = 'black'
+    gCtx.stroke()
+}
 
 
 
@@ -92,43 +111,3 @@ function onDeleteText(){
 
 
 
-
-
-
-
-// console.log(gImgs);
-
-
-// drawText(txt.value, 48, 'end', 'red', 'blue', 255, 50);
-
-
-// function drawMeme(imgId) {
-//     gEditorIsOn = true;
-//     toggleEditor();
-//     drawImg(imgId);
-//     onIncFont();
-//     onAddText();
-// }
-// var meme = getMeme();
-// meme.lines.forEach(line => {
-//     var txt = line.txt;
-//     var size = line.size;
-//     var fontFamily = line.family;
-//     var align = line.align;
-//     var innerColor = line.color;
-//     var strokeColor = line.strokeColor;
-//     var posX = line.x;
-//     var posY = line.y;
-//     drawText(txt, size, fontFamily, align, innerColor, strokeColor, posX, posY);
-// });
-// var meme = getMeme();
-//     meme.lines.forEach(function(line){
-//         var txt = line.txt;
-//         var size = line.size;
-//         var align=line.align;
-//         var fillColor = line.innerColor;
-//         var strokeColor = line.strokeColor;
-//         var posX=line.x;
-//         var posY =line.y;
-//         drawText(txt,size,align,fillColor,strokeColor,posX,posY);
-//     })
