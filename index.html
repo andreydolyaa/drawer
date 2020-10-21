@@ -1,19 +1,21 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme Generator</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
+
 <body onload="onInit()">
     <header>
         <nav>
             <div class="container">
-            <h1>memeGenerator</h1>
-            <ul>
-                <li><a href="">Gallery</a></li>
-                <li><a href="">About</a></li>
-            </ul>
+                <h1>memegen</h1>
+                <ul>
+                    <li><a href="#" onclick="toggleGalleryAndEditor()">Gallery</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
             </div>
         </nav>
     </header>
@@ -21,23 +23,31 @@
 
 
 
-
-
-    <div class="meme-gallery">
+    <div class="meme-gallery container">
         <div class="grid-container">
-
         </div>
     </div>
 
 
-<img src="">
-    
+
+
     <div class="meme-editor">
-    <div class="canvas-container">
-        <canvas id="my-canvas" height="500" width="500"></canvas>
+        <div class="canvas-container">
+            <canvas id="my-canvas" height="500" width="500"></canvas>
+        </div>
+        <div class="inputs">
+            <input type="text" placeholder="Enter meme text here">
+            <button value="add-text"><img src="img/ICONS/add.png" alt=""></button>
+        </div>
     </div>
-    </div>
+
+
+
+
+
+
     <script src="js/meme-service.js"></script>
     <script src="js/meme-controller.js"></script>
 </body>
+
 </html>

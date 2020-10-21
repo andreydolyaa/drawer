@@ -2,32 +2,53 @@
 
 var gCanvas;
 var gCtx;
+var gEditorIsOn = false;
 
 
-function onInit(){
-    // gCanvas = document.querySelector('#my-canvas');
-    // gCtx = gCanvas.getContext('2d');
+function onInit() {
+    gCanvas = document.querySelector('#my-canvas');
+    gCtx = gCanvas.getContext('2d');
 
-    // drawImg();
     renderGallery();
 }
 
+function drawImg(id) {
+    var image = getImgs()
+    var img = new Image();
+    img.src = image[id - 1].url;
+    img.onload = () => {
+        gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height);
+    }
+}
 
-// function drawImg(){
-//     var image = getImgs()
-//     var img = new Image();
-//     img.src = image[0].url;
-//     img.onload = () => {
-//         gCtx.drawImage(img,0,0,gCanvas.width,gCanvas.height);
-//     }
-// }
-
-function renderGallery(){
+function renderGallery() {
     var imgs = getImgs();
-    var strHTMLs = imgs.map(function(img){
+    var strHTMLs = imgs.map(function (img) {
         return `
-        <div id="${img.id}"><img src="${img.url}"></div>
+        <div class"gal-img" id="${img.id}" onclick="onEditImg('${img.id}')"><img src="${img.url}"></div>
         `
     });
     document.querySelector('.meme-gallery .grid-container').innerHTML = strHTMLs.join('');
+}
+
+
+function onEditImg(id) {
+    drawImg(id);
+    gEditorIsOn = true;
+    toggleGalleryAndEditor();
+}
+
+
+function toggleGalleryAndEditor() {
+    var gallery = document.querySelector('.meme-gallery');
+    var editor = document.querySelector('.meme-editor');
+    if (!gEditorIsOn) {
+        editor.style.display = 'none';
+        gallery.style.display = 'block';
+    }
+    else {
+        editor.style.display = 'flex';
+        gallery.style.display = 'none';
+        gEditorIsOn = false;
+    }
 }
