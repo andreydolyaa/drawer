@@ -8,29 +8,10 @@ var gImgs = _createImgs();
 
 
 
-var gMeme = {
-    selectedImgId:5,
-    selectedLineIdx:0,
-
-    lines:[
-        {txt:'HAHAH',size:20,align:'left',color:'red'}
-    ]
-}
-
-
-
-
-
 
 function getImgs(){
     return gImgs;
 }
-
-function getImageIdxById(id){
-    return gImgs.findIndex(img => id === img.id);
-}
-
-
 
 
 function _createImgs(){
