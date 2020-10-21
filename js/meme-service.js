@@ -30,7 +30,7 @@ function getImageIdxById(id){
     return gImgs.findIndex(img => id === img.id);
 }
 
-console.log(getImageIdxById(5));
+
 
 
 function _createImgs(){

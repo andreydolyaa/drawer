@@ -2,7 +2,11 @@
 
 var gCanvas;
 var gCtx;
+var gCurrImg;
 var gEditorIsOn = false;
+
+
+
 
 
 function onInit() {
@@ -12,14 +16,6 @@ function onInit() {
     renderGallery();
 }
 
-function drawImg(id) {
-    var image = getImgs()
-    var img = new Image();
-    img.src = image[id - 1].url;
-    img.onload = () => {
-        gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height);
-    }
-}
 
 function renderGallery() {
     var imgs = getImgs();
@@ -32,10 +28,38 @@ function renderGallery() {
 }
 
 
+
+
+function drawImg(id) {
+    var image = getImgs()
+    var img = new Image();
+    img.src = image[id - 1].url;
+    gCurrImg = image[id - 1].url;
+    img.onload = () => {
+        gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height);
+    }
+}
+
+function drawText(text, x, y) {
+    gCtx.strokeStyle = 'red';
+    gCtx.fillStyle = 'white';
+    gCtx.lineWidth = '2';
+    gCtx.font = '48px impact';
+    gCtx.textAlign = 'start';
+    gCtx.fillText(text, x, y);
+    gCtx.strokeText(text, x, y);
+}
+
+
 function onEditImg(id) {
     drawImg(id);
     gEditorIsOn = true;
     toggleGalleryAndEditor();
+}
+
+function onTextOnImg(){
+    var text = document.querySelector('#img-txt').value;
+    drawText(text,200,200)
 }
 
 
