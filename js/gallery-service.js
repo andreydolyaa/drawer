@@ -4,13 +4,14 @@ var numOfImgs = 18;
 var gImgs = _createImgs();
 
 
-
-
-
-
-
 function getImgs(){
     return gImgs;
+}
+
+
+function getImgUrl(imgId){
+    var img = gImgs.find(img => img.id === imgId);
+    return img.url;
 }
 
 

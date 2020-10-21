@@ -1,60 +1,88 @@
 'use strict';
 
 var gCurrImgId;
-var gCurrLineIdx = 1;
-var gCurrMeme;
 
 
 
-function drawImg(id) {
-    var image = getImgs()
-    var img = new Image();
-    img.src = image[id - 1].url;
-    gCurrImgId = image[id - 1].id;
-    img.onload = () => {
-        gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height);
-    }
+
+function renderMeme() {
+    drawImg();
+    var meme = getMeme();
+    meme.lines.forEach(function (line) {
+        var txt = line.txt;
+        var size = line.size;
+        var align = line.align;
+        var fillColor = line.innerColor;
+        var strokeColor = line.strokeColor;
+        var posX = line.x;
+        var posY = line.y;
+        drawText(txt, size, align, fillColor, strokeColor, posX, posY);
+    })
 }
-
-function drawText(text, x, y) {
-    gCtx.strokeStyle = 'red';
-    gCtx.fillStyle = 'white';
-    gCtx.lineWidth = '2';
-    gCtx.font = '48px impact';
-    gCtx.textAlign = 'start';
-    gCtx.fillText(text, x, y);
-    gCtx.strokeText(text, x, y);
-}
-
-
-
-
-function renderCanvas(id) {
-    drawImg(id);
-    gEditorIsOn = true;
-    toggleGalleryAndEditor();
-}
-
-
 
 
 function onAddText() {
-    var text = document.querySelector('#img-txt');
-    createLine(text.value,50,'center','red',gCurrImgId,gCurrLineIdx);
-    if (gCurrLineIdx === 1) {
-        drawText(text.value, 225, 50);
-        gCurrLineIdx++;
-    }
-    else if (gCurrLineIdx === 2) {
-        drawText(text.value, 225, 455);
-        gCurrLineIdx++;
-    }
-    else {
-        drawText(text.value, 250, 250);
-        gCurrLineIdx++;
-    }
-    text.value = '';
-    console.log(gMeme);
+    var txt = document.querySelector('#img-txt');
+    addText(txt.value);
+    txt.value = '';
+    renderMeme();
+}
+
+
+function onImgClicked(imgId) {
+    gEditorIsOn = true;
+    toggleEditor();
+    imgClick(imgId);
+    renderMeme();
+}
+
+
+function drawText(text, fontSize, align, innerColor, strokeColor, x, y) {
+    gCtx.strokeStyle = strokeColor;
+    gCtx.fillStyle = innerColor;
+    gCtx.lineWidth = '2'
+    gCtx.font = `${fontSize}px impact`
+    gCtx.textAlign = align;
+    gCtx.fillText(text, x, y)
+    gCtx.strokeText(text, x, y)
+}
+
+
+function drawImg() {
+    var meme = getMeme();
+    var imgId = meme.selectedImgId;
+    var img = new Image()
+    console.log(imgId);
+    console.log(meme);
+    img.src = `img/${imgId}.jpg`;
+    gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
+}
+
+
+
+function onIncFont() {
+    increaseFont();
+    renderMeme();
+}
+
+function onDecFont() {
+    decreaseFont();
+    renderMeme();
+}
+
+function onTextUp(){
+    moveTextUp();
+    renderMeme();
+}
+
+function onTextDown(){
+    moveTextDown();
+    renderMeme();
+}
+
+function onDeleteText(){
+    deleteText();
+    renderMeme();
 }
 
 
@@ -68,36 +96,39 @@ function onAddText() {
 
 
 
+// console.log(gImgs);
 
 
+// drawText(txt.value, 48, 'end', 'red', 'blue', 255, 50);
 
 
-
-
-
-
-// function getCurrLinePos(event){
-//     gCurrLineIdx.x = event.offsetX;
-//     gCurrLineIdx.y = event.offsetY;
+// function drawMeme(imgId) {
+//     gEditorIsOn = true;
+//     toggleEditor();
+//     drawImg(imgId);
+//     onIncFont();
+//     onAddText();
 // }
-
-// function onAddAnotherText(){
-//     var meme = getMeme();
-//     var text = document.querySelector('#img-txt');
-//     text.value = '';
-//     meme.lines.push(gCurrMeme);
-//     console.log(meme);
-//     drawText(text.value,300,300);
-// }
-
-
-
-
-// function onTextOnImg(){
-//     var text = document.querySelector('#img-txt').value;
-
-    // createMeme(text,gCurrImgId,gCurrImgId)
-    // drawText(text,200,200)
-    // console.log(createMeme(text,gCurrImgId,gCurrImgId));
-    // console.log(gMeme);
-// }
+// var meme = getMeme();
+// meme.lines.forEach(line => {
+//     var txt = line.txt;
+//     var size = line.size;
+//     var fontFamily = line.family;
+//     var align = line.align;
+//     var innerColor = line.color;
+//     var strokeColor = line.strokeColor;
+//     var posX = line.x;
+//     var posY = line.y;
+//     drawText(txt, size, fontFamily, align, innerColor, strokeColor, posX, posY);
+// });
+// var meme = getMeme();
+//     meme.lines.forEach(function(line){
+//         var txt = line.txt;
+//         var size = line.size;
+//         var align=line.align;
+//         var fillColor = line.innerColor;
+//         var strokeColor = line.strokeColor;
+//         var posX=line.x;
+//         var posY =line.y;
+//         drawText(txt,size,align,fillColor,strokeColor,posX,posY);
+//     })

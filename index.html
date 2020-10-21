@@ -13,7 +13,7 @@
             <div class="container">
                 <h1>memegen</h1>
                 <ul>
-                    <li><a href="#" onclick="toggleGalleryAndEditor()">Gallery</a></li>
+                    <li><a href="#" onclick="toggleEditor()">Gallery</a></li>
                     <li><a href="#">About</a></li>
                 </ul>
             </div>
@@ -40,9 +40,16 @@
                 <input id='img-txt' type="text" placeholder="Enter meme text here">
                 <button onclick="onAddText()"><img src="img/ICONS/add.png" alt=""></button>
             </div>
-            <div class="move-up-down">
-                <button onclick="onImageMoveUp()"><img src="img/ICONS/down-arrow.png" alt=""></button>
-                <button onclick="onImageMoveDown()"><img src="img/ICONS/up-arrow (1).png" alt=""></button>
+            <div class="font-size">
+                <button onclick="onIncFont()"><img src="img/ICONS/increase font - icon.png" alt=""></button>
+                <button onclick="onDecFont()"><img src="img/ICONS/decrease font - icon.png" alt=""></button>
+            </div>
+            <div class="move-text">
+                <button onclick="onTextUp()"><img src="img/ICONS/up-arrow (1).png" alt=""></button>
+                <button onclick="onTextDown()"><img src="img/ICONS/down-arrow.png" alt=""></button>
+            </div>
+            <div class="delete-text">
+                <button onclick="onDeleteText()"><img src="img/ICONS/trash.png" alt=""></button>
             </div>
         </div>
     </div>
