@@ -11,10 +11,14 @@ function createMeme() {
         selectedImgId: null,
         selectedLineIdx: 0,
         lines: [
-            { txt: 'your text', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: 255, y: 100 },
-            { txt: 'your text', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: 255, y: 420 },
+            // { txt: 'your text', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: 255, y: 100 },
+            // { txt: 'your text', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: 255, y: 420 },
         ]
     }
+}
+
+function createMemeText(text,x,y){
+    return { txt: text, size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: x, y: y }
 }
 
 function getMeme() {
@@ -26,22 +30,14 @@ function imgClick(id) {
     gMeme.selectedImgId = +id;
 }
 
-function changeText(txt) {
-    if (gMeme.lines.length === 0) addNewText(txt);
-    else gMeme.lines[gMeme.selectedLineIdx].txt = txt;
+
+function addText(text) {
+    if(gMeme.lines.length === 0) gMeme.lines.push(createMemeText(text,255,100));
+    else if(gMeme.lines.length === 1) gMeme.lines.push(createMemeText(text,255,400));
+    else gMeme.lines.push(createMemeText(text,255,getRandomIntInclusive(200,350)));
 }
 
-function addNewText(txt) {
-    if (gMeme.selectedLineIdx === 0) {
-        gMeme.selectedLineIdx++;
-        focusText();
-        changeText(txt);
-    }
-    else {
-        gMeme.lines.push({ txt:'', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: 255, y: getRandomIntInclusive(100, 400) });
-        console.log(gMeme);
-    }
-}
+
 
 function getPosition() {
     return {
@@ -56,7 +52,6 @@ function focusText() {
     if (gMeme.selectedLineIdx === gMeme.lines.length) {
         gMeme.selectedLineIdx = 0;
     }
-    console.log('curr line idx :', gMeme.selectedLineIdx);
 }
 
 function getFontSize() {
@@ -91,13 +86,3 @@ function deleteText() {
 
 
 
-// if (gMeme.selectedLineIdx === 0) {
-//     gMeme.selectedLineIdx++;
-//     focusText();
-
-// } else {
-    // if (gMeme.lines.length === 0) {
-    //     addNewText(txt);
-    // } else {
-    //     gMeme.lines[gMeme.selectedLineIdx].txt = txt;
-    // }

@@ -16,23 +16,21 @@ function renderMeme() {
         var strokeColor = line.strokeColor;
         var posX = line.x;
         var posY = line.y;
-        if(txt) drawFocus();
+        if (txt) drawFocus();
         drawText(txt, size, align, fillColor, strokeColor, posX, posY);
     });
 }
 
 
-function onChangeText() {
-    var txt = document.querySelector('#img-txt');
-    changeText(txt.value);
-    renderMeme();
-}
-function onAddText(){
-    var txt = document.querySelector('#img-txt');
-    addNewText(txt.value);
-    txt.value = '';
-    focusText();
-    renderMeme();
+function onAddText() {
+    var text = document.querySelector('#img-txt');
+    if (text.value === '') return
+    else {
+        addText(text.value);
+        focusText();
+        text.value = '';
+        renderMeme();
+    }
 }
 
 
@@ -75,39 +73,36 @@ function onDecFont() {
     renderMeme();
 }
 
-function onTextUp(){
+function onTextUp() {
     moveTextUp();
     renderMeme();
 }
 
-function onTextDown(){
+function onTextDown() {
     moveTextDown();
     renderMeme();
 }
 
-function onDeleteText(){
+function onDeleteText() {
     deleteText();
     renderMeme();
 }
 
-function onFocusText(){
+function onFocusText() {
     document.querySelector('#img-txt').value = '';
     focusText();
     renderMeme();
 }
 
-function drawFocus(){
-    var txt = document.querySelector('#img-txt').value;
-    var meme = getMeme();
+function drawFocus() {
     var position = getPosition();
-    if(txt === '' && meme.selectedLineIdx > 1) return
-    else drawRect(position.x,position.y);
+    drawRect(position.x, position.y);
 }
 
 
 function drawRect(x, y) {
     gCtx.beginPath()
-    gCtx.rect(x/2, y/2, x,y)
+    gCtx.rect(x / 2, y / 2, x, y)
     gCtx.strokeStyle = 'black'
     gCtx.stroke()
 }
