@@ -16,7 +16,7 @@ function renderMeme() {
         var strokeColor = line.strokeColor;
         var posX = line.x;
         var posY = line.y;
-        if (txt) drawFocus();
+        drawFocus()
         drawText(txt, size, align, fillColor, strokeColor, posX, posY);
     });
 }
@@ -96,7 +96,11 @@ function onFocusText() {
 
 function drawFocus() {
     var position = getPosition();
-    drawRect(position.x, position.y);
+    if(!position.x || !position.y){
+    drawRect(255,155);
+    }else{
+        drawRect(position.x,position.y);
+    }
 }
 
 

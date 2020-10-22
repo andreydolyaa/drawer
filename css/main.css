@@ -3,8 +3,14 @@
     margin:0;
 }
 
+@font-face{
+    font-family: mont;
+    src: url(/fonts/Montserrat-Regular.ttf);
+}
+
 body{
     background-color: rgb(238, 238, 238);
+    font-family: mont;
 }
 
 /******************** header****************/
@@ -82,4 +88,64 @@ img{
     border-radius: 7px;
     background-color: white;
 }
+/************** mobile nav ***********************/
+.hamburger-icon{
+   font-size:1.5rem;
+   display: none;
+}
+.hamburger-icon{
+    border:none;
+    background-color: transparent;
+    color:#fff;
+    cursor: pointer;
+}
 
+.mobile-nav{
+    display:none;
+    background-color: #ff7f00;
+    text-align: center;
+    padding:1rem;
+}
+.mobile-nav ul li{
+    list-style: none;
+    padding:1rem;
+}
+.mobile-nav ul li a{
+    text-decoration: none;
+    color:#fff;
+    font-size:2rem;
+}
+/************* meida ***********************/
+@media(max-width:1200px){
+    header nav .container h1{
+        margin-left:1rem;
+    }
+    header nav .container ul{
+        margin-right:1rem;
+    }
+    .grid-container{
+        padding:1rem;
+    }
+    .hamburger-icon{
+        margin-right:1rem;
+     }
+}
+
+@media(max-width:720px){
+    .grid-container{
+        grid-template-columns: repeat(2,1fr);
+        padding:1rem;
+    }
+    nav ul li{
+        display:none;
+    }
+    .hamburger-icon{
+        font-size:1.5rem;
+        display: block;
+     }
+}
+@media(max-width:380px){
+    .grid-container{
+        grid-template-columns: repeat(1,1fr);
+    }
+}

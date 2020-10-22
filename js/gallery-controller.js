@@ -3,6 +3,7 @@
 var gCanvas;
 var gCtx;
 var gEditorIsOn = false;
+var gNavOpen = false;
 
 
 function onInit() {
@@ -34,5 +35,16 @@ function toggleEditor() {
         editor.style.display = 'flex';
         gallery.style.display = 'none';
         gEditorIsOn = false;
+    }
+}
+
+function onOpenMenu(){
+    var elNav = document.querySelector('.mobile-nav');
+    if(!gNavOpen){
+        elNav.style.display = 'block';
+        gNavOpen = true;
+    }else{
+        elNav.style.display = 'none';
+        gNavOpen = false;
     }
 }

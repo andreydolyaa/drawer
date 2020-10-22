@@ -10,14 +10,11 @@ function createMeme() {
     gMeme = {
         selectedImgId: null,
         selectedLineIdx: 0,
-        lines: [
-            // { txt: 'your text', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: 255, y: 100 },
-            // { txt: 'your text', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: 255, y: 420 },
-        ]
+        lines: []
     }
 }
 
-function createMemeText(text,x,y){
+function createMemeText(text, x, y) {
     return { txt: text, size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: x, y: y }
 }
 
@@ -32,9 +29,10 @@ function imgClick(id) {
 
 
 function addText(text) {
-    if(gMeme.lines.length === 0) gMeme.lines.push(createMemeText(text,255,100));
-    else if(gMeme.lines.length === 1) gMeme.lines.push(createMemeText(text,255,400));
-    else gMeme.lines.push(createMemeText(text,255,getRandomIntInclusive(200,350)));
+    if (gMeme.lines.length === 0) gMeme.lines.push(createMemeText(text, 255, 100));
+    else if (gMeme.lines.length === 1) gMeme.lines.push(createMemeText(text, 255, 400));
+    else gMeme.lines.push(createMemeText(text, 255, getRandomIntInclusive(200, 350)));
+    console.log(gMeme.lines);
 }
 
 
@@ -76,7 +74,8 @@ function moveTextDown() {
 
 function deleteText() {
     gMeme.lines.splice(0, gMeme.lines.length);
-    gMeme.lines = [];
+
+    console.log(gMeme.lines);
 }
 
 
