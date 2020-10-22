@@ -2,7 +2,6 @@
 
 
 var gMeme;
-var gCurrLine;
 createMeme();
 
 
@@ -10,12 +9,14 @@ function createMeme() {
     gMeme = {
         selectedImgId: null,
         selectedLineIdx: 0,
-        lines: []
+        lines: [
+            { txt: 'your text here', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: 255, y: 100 }
+        ]
     }
 }
 
-function createMemeText(text, x, y) {
-    return { txt: text, size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: x, y: y }
+function createMemeText(x, y) {
+    return { txt: 'your text here', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: x, y: y }
 }
 
 function getMeme() {
@@ -28,11 +29,14 @@ function imgClick(id) {
 }
 
 
-function addText(text) {
-    if (gMeme.lines.length === 0) gMeme.lines.push(createMemeText(text, 255, 100));
-    else if (gMeme.lines.length === 1) gMeme.lines.push(createMemeText(text, 255, 400));
-    else gMeme.lines.push(createMemeText(text, 255, getRandomIntInclusive(200, 350)));
-    console.log(gMeme.lines);
+function changeText(txt) {
+    gMeme.lines[gMeme.selectedLineIdx].txt = txt
+}
+
+
+function addText() {
+    if(gMeme.lines.length === 1) gMeme.lines.push(createMemeText(255,400));
+    else gMeme.lines.push(createMemeText(255,getRandomIntInclusive(150,350)));
 }
 
 

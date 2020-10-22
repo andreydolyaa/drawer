@@ -42,11 +42,11 @@
 
     <div class="meme-editor">
         <div class="canvas-container">
-            <canvas id="my-canvas" height="500" width="500"></canvas>
+            <canvas id="my-canvas" width="500px" height="500px"></canvas>
         </div>
         <div class="control-box">
             <div class="add-text">
-                <input id='img-txt' type="text" placeholder="Enter meme text here">
+                <input id='img-txt' oninput="onChangeText()" type="text" placeholder="Enter meme text here">
                 <button onclick="onAddText()"><img src="img/ICONS/add.png" alt=""></button>
             </div>
             <div class="font-size">

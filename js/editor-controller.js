@@ -19,20 +19,21 @@ function renderMeme() {
         drawFocus()
         drawText(txt, size, align, fillColor, strokeColor, posX, posY);
     });
+
 }
 
+
+function onChangeText() {
+    var txt = document.querySelector('#img-txt');
+    changeText(txt.value);
+    renderMeme();
+}
 
 function onAddText() {
-    var text = document.querySelector('#img-txt');
-    if (text.value === '') return
-    else {
-        addText(text.value);
-        focusText();
-        text.value = '';
-        renderMeme();
-    }
+    addText();
+    focusText();
+    renderMeme();
 }
-
 
 function onImgClicked(imgId) {
     gEditorIsOn = true;
@@ -96,10 +97,10 @@ function onFocusText() {
 
 function drawFocus() {
     var position = getPosition();
-    if(!position.x || !position.y){
-    drawRect(255,155);
-    }else{
-        drawRect(position.x,position.y);
+    if (!position.x || !position.y) {
+        drawRect(255, 155);
+    } else {
+        drawRect(position.x, position.y);
     }
 }
 
@@ -110,7 +111,6 @@ function drawRect(x, y) {
     gCtx.strokeStyle = 'black'
     gCtx.stroke()
 }
-
 
 
 
