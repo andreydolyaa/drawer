@@ -58,9 +58,9 @@
             <div class="font-size">
                 <button onclick="onIncFont()"><img src="img/ICONS/increase font - icon.png" alt=""></button>
                 <button onclick="onDecFont()"><img src="img/ICONS/decrease font - icon.png" alt=""></button>
-                <button ><img src="img/ICONS/align-to-left.png" alt=""></button>
-                <button ><img src="img/ICONS/center-text-alignment.png" alt=""></button>
-                <button ><img src="img/ICONS/align-to-right.png" alt=""></button>
+                <button onclick="onAlignToRight()"><img src="img/ICONS/align-to-left.png" alt=""></button>
+                <button onclick="onAlignToCenter()"><img src="img/ICONS/center-text-alignment.png" alt=""></button>
+                <button onclick="onAlignToLeft()"><img src="img/ICONS/align-to-right.png" alt=""></button>
             </div>
             <div class="font-misc">
                 <select id="fonts">
@@ -68,8 +68,8 @@
                     <option class="opt" value="arial">Arial</option>
                     <option class="opt" value="consolas">Consolas</option>
                 </select>
-                <button><img src="img/ICONS/text stroke.png" alt=""></button>
-                <button><img src="img/ICONS/paint-board-and-brush.png" alt=""></button>
+                <button><input type="color" class="colorPickerStroke" value="#fff" onclick="onStrokeColor()"><img src="img/ICONS/text stroke.png" alt=""></button>
+                <button><input type="color" class="colorPicker" value="#fff" onclick="onFillColor()"><img src="img/ICONS/paint-board-and-brush.png" alt=""></button>
             </div>
             <div class="download">
                 <button><a href="#" onclick="onDownload(this)"><h2>Download Meme</h2><i class="fas fa-file-download"></i></a></button>

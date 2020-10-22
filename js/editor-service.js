@@ -35,8 +35,8 @@ function changeText(txt) {
 
 
 function addText() {
-    if(gMeme.lines.length === 1) gMeme.lines.push(createMemeText(300,500));
-    else gMeme.lines.push(createMemeText(300,getRandomIntInclusive(150,450)));
+    if (gMeme.lines.length === 1) gMeme.lines.push(createMemeText(300, 500));
+    else gMeme.lines.push(createMemeText(300, getRandomIntInclusive(150, 450)));
 }
 
 
@@ -82,9 +82,25 @@ function deleteText() {
     console.log(gMeme.lines);
 }
 
+function alignToLeft() {
+    gMeme.lines[gMeme.selectedLineIdx].align = 'left';
+}
 
+function alignToRight() {
+    gMeme.lines[gMeme.selectedLineIdx].align = 'right';
+}
 
+function alignToCenter() {
+    gMeme.lines[gMeme.selectedLineIdx].align = 'center';
+}
 
+function setStrokeColor(val){
+    gMeme.lines[gMeme.selectedLineIdx].strokeColor = val;
+}
+
+function setFillColor(val){
+    gMeme.lines[gMeme.selectedLineIdx].innerColor = val;
+}
 
 
 

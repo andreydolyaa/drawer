@@ -238,7 +238,21 @@ img {
     color: #fff;
     font-size: 2rem;
 }
-
+/******** color pick *********/
+.colorPicker{
+    position: absolute;
+    height:40px;
+    width:40px;
+    opacity:0;
+    cursor: pointer;
+}
+.colorPickerStroke{
+    position: absolute;
+    height:40px;
+    width:40px;
+    opacity:0;
+    cursor: pointer;
+}
 /************* meida ***********************/
 
 @media(max-width:1200px) {

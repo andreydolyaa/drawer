@@ -62,7 +62,20 @@ function drawImg() {
     gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
 }
 
+function onAlignToLeft(){
+    alignToLeft();
+    renderMeme();
+}
 
+function onAlignToRight(){
+    alignToRight();
+    renderMeme();
+}
+
+function onAlignToCenter(){
+    alignToCenter();
+    renderMeme();
+}
 
 function onIncFont() {
     increaseFont();
@@ -119,4 +132,18 @@ function onDownload(elLink) {
     elLink.download = 'puki.jpg'
 }
 
+function onStrokeColor(){
+    var color = document.querySelector('.colorPickerStroke');
+    color.addEventListener('input',function(){
+        setStrokeColor(color.value);
+        renderMeme();
+    });
+}
 
+function onFillColor(){
+    var color = document.querySelector('.colorPicker');
+    color.addEventListener('input',function(){
+        setFillColor(color.value);
+        renderMeme();
+    });
+}
