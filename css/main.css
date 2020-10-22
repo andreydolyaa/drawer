@@ -1,192 +1,269 @@
-*{
+* {
     box-sizing: border-box;
-    margin:0;
+    margin: 0;
 }
 
-@font-face{
+@font-face {
     font-family: mont;
     src: url(../fonts/Montserrat-Regular.ttf);
 }
 
-body{
+body {
     background-color: rgb(238, 238, 238);
     font-family: mont;
 }
 
 /******************** header****************/
-header nav{
+
+header nav {
     background-color: #ff7f00;
-    color:white;
+    color: white;
 }
-header nav .container{
-    display:flex;
+
+header nav .container {
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    margin:0 auto;
-    height:65px;
+    margin: 0 auto;
+    height: 65px;
 }
-header nav .container ul{
+
+header nav .container ul {
     display: flex;
     align-items: center;
 }
-header nav .container ul li{
+
+header nav .container ul li {
     list-style: none;
 }
-header nav .container ul li a{
+
+header nav .container ul li a {
     text-decoration: none;
-    color:#fff;
+    color: #fff;
 }
-header nav .container ul li:first-child{
-    margin-right:2rem;
+
+header nav .container ul li:first-child {
+    margin-right: 2rem;
 }
+
 /******************** helpers****************/
-.container{
-    max-width:1200px;
+
+.container {
+    max-width: 1200px;
 }
-.display-none{
-    display:none;
+
+.display-none {
+    display: none;
 }
-.display-block{
-    display:block;
+
+.display-block {
+    display: block;
 }
 
 /********** canvas ***************/
-canvas{
+
+canvas {
     display: block;
-    border:1px solid black;
+    border: 1px solid black;
     background-color: rgb(255, 255, 255);
 }
-.canvas-container{
 
-}
+.canvas-container {}
 
 /********** GALLERY GRID ***************************/
-.meme-gallery{
-    margin:1rem auto;
+
+.meme-gallery {
+    margin: 1rem auto;
 }
-img{
-    width:100%;
+
+img {
+    width: 100%;
     cursor: pointer;
 }
-.grid-container{
-    display:grid;
-    grid-gap:1rem;
-    grid-template-columns:repeat(3,1fr) ;
+
+.grid-container {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 /************* meme edtior div ***************************/
-.meme-editor{
-    display:none;
-    max-width:1200px;
+
+.meme-editor {
+    display: none;
+    max-width: 1200px;
     margin: 1.625rem auto;
     justify-content: space-between;
 }
-.meme-editor img{
-    width:2.5rem;
+
+.meme-editor img {
+    width: 2.5rem;
 }
-.meme-editor button{
-    width:3.75rem;
-    height:3.75rem;
-    border:none;
+
+.meme-editor button {
+    width: 3.75rem;
+    height: 3.75rem;
+    border: none;
     border-radius: 12px;
     background-color: white;
 }
-.control-box{
-    width:100%;
-    display:flex;
+
+.control-box {
+    width: 100%;
+    display: flex;
     flex-direction: column;
 }
-.add-text #img-txt{
-    margin:auto;
+
+.add-text #img-txt {
+    margin: auto;
     display: flex;
-    width:370px;
-    height:60px;
-    border:none;
-    border-radius:12px;
-    font-size:1.25rem;
-    padding:20px;
+    width: 370px;
+    height: 60px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    padding: 20px;
     outline: none;
     color: #444444;
 }
-#img-txt::placeholder{
-    font-size:1.25rem;
+
+#img-txt::placeholder {
+    font-size: 1.25rem;
 }
 
-.btn-add{
-    display:flex;
+.btn-add {
+    display: flex;
     justify-content: center;
     align-items: center;
-    margin-top:0.687rem;
+    margin-top: 0.687rem;
 }
-.btn-add > *:not(:last-child) {
-    margin-right:1.125rem;
+
+.btn-add>*:not(:last-child) {
+    margin-right: 1.125rem;
 }
-.font-size{
-    display:flex;
+
+.font-size {
+    display: flex;
     justify-content: center;
-    margin-top:2.812rem;
+    margin-top: 2.812rem;
 }
-.font-size > *:not(:last-child) {
-    margin-right:1.125rem;
+
+.font-size>*:not(:last-child) {
+    margin-right: 1.125rem;
 }
+
+.font-misc select {
+    width: 13.625rem;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+}
+
+.opt {
+    font-size: 1.25rem;
+}
+
+.font-misc {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.687rem;
+}
+
+.font-misc>*:not(:last-child) {
+    margin-right: 1.125rem;
+}
+
+.download {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.687rem;
+}
+
+.download button {
+    font-family: mont;
+    width: 370px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color:#ff7f00;
+    outline: none;
+    transition: .3s;
+}
+.download button:hover{
+    color:#00b315;
+}
+
+.fa-file-download {
+    font-size: 1.5rem;
+    margin-left:1rem;
+}
+
 /************** mobile nav ***********************/
-.hamburger-icon{
-   font-size:1.5rem;
-   display: none;
+
+.hamburger-icon {
+    font-size: 1.5rem;
+    display: none;
 }
-.hamburger-icon{
-    border:none;
+
+.hamburger-icon {
+    border: none;
     background-color: transparent;
-    color:#fff;
+    color: #fff;
     cursor: pointer;
 }
 
-.mobile-nav{
-    display:none;
+.mobile-nav {
+    display: none;
     background-color: #ff7f00;
     text-align: center;
-    padding:1rem;
-}
-.mobile-nav ul li{
-    list-style: none;
-    padding:1rem;
-}
-.mobile-nav ul li a{
-    text-decoration: none;
-    color:#fff;
-    font-size:2rem;
-}
-/************* meida ***********************/
-@media(max-width:1200px){
-    header nav .container h1{
-        margin-left:1rem;
-    }
-    header nav .container ul{
-        margin-right:1rem;
-    }
-    .grid-container{
-        padding:1rem;
-    }
-    .hamburger-icon{
-        margin-right:1rem;
-     }
+    padding: 1rem;
 }
 
-@media(max-width:720px){
-    .grid-container{
-        grid-template-columns: repeat(2,1fr);
-        padding:1rem;
-    }
-    nav ul li{
-        display:none;
-    }
-    .hamburger-icon{
-        font-size:1.5rem;
-        display: block;
-     }
+.mobile-nav ul li {
+    list-style: none;
+    padding: 1rem;
 }
-@media(max-width:380px){
-    .grid-container{
-        grid-template-columns: repeat(1,1fr);
+
+.mobile-nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 2rem;
+}
+
+/************* meida ***********************/
+
+@media(max-width:1200px) {
+    header nav .container h1 {
+        margin-left: 1rem;
+    }
+    header nav .container ul {
+        margin-right: 1rem;
+    }
+    .grid-container {
+        padding: 1rem;
+    }
+    .hamburger-icon {
+        margin-right: 1rem;
+    }
+}
+
+@media(max-width:720px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 1rem;
+    }
+    nav ul li {
+        display: none;
+    }
+    .hamburger-icon {
+        font-size: 1.5rem;
+        display: block;
+    }
+}
+
+@media(max-width:380px) {
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr);
     }
 }

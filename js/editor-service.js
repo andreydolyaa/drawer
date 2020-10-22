@@ -10,7 +10,7 @@ function createMeme() {
         selectedImgId: null,
         selectedLineIdx: 0,
         lines: [
-            { txt: 'your text here', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: 255, y: 100 }
+            { txt: 'your text here', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: 300, y: 100 }
         ]
     }
 }
@@ -35,8 +35,8 @@ function changeText(txt) {
 
 
 function addText() {
-    if(gMeme.lines.length === 1) gMeme.lines.push(createMemeText(255,400));
-    else gMeme.lines.push(createMemeText(255,getRandomIntInclusive(150,350)));
+    if(gMeme.lines.length === 1) gMeme.lines.push(createMemeText(300,500));
+    else gMeme.lines.push(createMemeText(300,getRandomIntInclusive(150,450)));
 }
 
 
