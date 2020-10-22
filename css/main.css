@@ -173,10 +173,19 @@ img {
     margin-right: 1.125rem;
 }
 
-.download {
+.download  {
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-top: 0.687rem;
+}
+.download a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color:#ff7f00;
+    transition: .3s;
 }
 
 .download button {
@@ -188,9 +197,8 @@ img {
     cursor: pointer;
     color:#ff7f00;
     outline: none;
-    transition: .3s;
 }
-.download button:hover{
+.download button a:hover{
     color:#00b315;
 }
 

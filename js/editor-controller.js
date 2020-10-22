@@ -113,6 +113,10 @@ function drawRect(x, y) {
 }
 
 
-
+function onDownload(elLink) {
+    const data = gCanvas.toDataURL()
+    elLink.href = data
+    elLink.download = 'puki.jpg'
+}
 
 
