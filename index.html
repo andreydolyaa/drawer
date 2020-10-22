@@ -42,27 +42,36 @@
 
     <div class="meme-editor">
         <div class="canvas-container">
-            <canvas id="my-canvas" width="500px" height="500px"></canvas>
+            <canvas id="my-canvas" width="600px" height="600px"></canvas>
         </div>
         <div class="control-box">
             <div class="add-text">
                 <input id='img-txt' oninput="onChangeText()" type="text" placeholder="Enter meme text here">
+            </div>
+            <div class="btn-add">
+                <button onclick="onTextUp()"><img src="img/ICONS/up-arrow (1).png" alt=""></button>
+                <button onclick="onTextDown()"><img src="img/ICONS/down-arrow.png" alt=""></button>
+                <button onclick="onFocusText()"><img src="img/ICONS/up-and-down-opposite-double-arrows-side-by-side.png" alt=""></button>
                 <button onclick="onAddText()"><img src="img/ICONS/add.png" alt=""></button>
+                <button onclick="onDeleteText()"><img src="img/ICONS/trash.png" alt=""></button>
             </div>
             <div class="font-size">
                 <button onclick="onIncFont()"><img src="img/ICONS/increase font - icon.png" alt=""></button>
                 <button onclick="onDecFont()"><img src="img/ICONS/decrease font - icon.png" alt=""></button>
+                <button onclick="onDecFont()"><img src="img/ICONS/align-to-left.png" alt=""></button>
+                <button onclick="onDecFont()"><img src="img/ICONS/center-text-alignment.png" alt=""></button>
+                <button onclick="onDecFont()"><img src="img/ICONS/align-to-right.png" alt=""></button>
             </div>
-            <div class="move-text">
+            <!-- <div class="move-text">
                 <button onclick="onTextUp()"><img src="img/ICONS/up-arrow (1).png" alt=""></button>
                 <button onclick="onTextDown()"><img src="img/ICONS/down-arrow.png" alt=""></button>
-            </div>
-            <div class="delete-text">
+            </div> -->
+            <!-- <div class="delete-text">
                 <button onclick="onDeleteText()"><img src="img/ICONS/trash.png" alt=""></button>
-            </div>
-            <div class="switch-between">
+            </div> -->
+            <!-- <div class="switch-between">
                 <button onclick="onFocusText()"><img src="img/ICONS/up-and-down-opposite-double-arrows-side-by-side.png" alt=""></button>
-            </div>
+            </div> -->
         </div>
     </div>
 
