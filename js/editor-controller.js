@@ -6,9 +6,8 @@ var gCurrImgId;
 
 
 function renderMeme() {
-    drawImg();
-    drawFocus();
     var meme = getMeme();
+    drawImg();
     meme.lines.forEach(function (line) {
         var txt = line.txt;
         var size = line.size;
@@ -17,15 +16,22 @@ function renderMeme() {
         var strokeColor = line.strokeColor;
         var posX = line.x;
         var posY = line.y;
+        if(txt) drawFocus();
         drawText(txt, size, align, fillColor, strokeColor, posX, posY);
-    })
+    });
 }
 
 
-function onAddText() {
+function onChangeText() {
     var txt = document.querySelector('#img-txt');
-    addText(txt.value);
+    changeText(txt.value);
+    renderMeme();
+}
+function onAddText(){
+    var txt = document.querySelector('#img-txt');
+    addNewText(txt.value);
     txt.value = '';
+    focusText();
     renderMeme();
 }
 
@@ -41,11 +47,11 @@ function onImgClicked(imgId) {
 function drawText(text, fontSize, align, innerColor, strokeColor, x, y) {
     gCtx.strokeStyle = strokeColor;
     gCtx.fillStyle = innerColor;
-    gCtx.lineWidth = '2'
-    gCtx.font = `${fontSize}px impact`
+    gCtx.lineWidth = '2';
+    gCtx.font = `${fontSize}px impact`;
     gCtx.textAlign = align;
-    gCtx.fillText(text, x, y)
-    gCtx.strokeText(text, x, y)
+    gCtx.fillText(text, x, y);
+    gCtx.strokeText(text, x, y);
 }
 
 
@@ -53,8 +59,6 @@ function drawImg() {
     var meme = getMeme();
     var imgId = meme.selectedImgId;
     var img = new Image()
-    console.log(imgId);
-    console.log(meme);
     img.src = `img/${imgId}.jpg`;
     gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
 }
@@ -87,6 +91,7 @@ function onDeleteText(){
 }
 
 function onFocusText(){
+    document.querySelector('#img-txt').value = '';
     focusText();
     renderMeme();
 }
@@ -94,7 +99,6 @@ function onFocusText(){
 function drawFocus(){
     var position = getPosition();
     drawRect(position.x,position.y);
-    console.log(position.x,position.y);
 }
 
 
@@ -111,3 +115,4 @@ function drawRect(x, y) {
 
 
 
+console.log(gMeme);
