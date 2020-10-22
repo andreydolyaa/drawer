@@ -63,13 +63,13 @@
                 <button onclick="onAlignToLeft()"><img src="img/ICONS/align-to-right.png" alt=""></button>
             </div>
             <div class="font-misc">
-                <select id="fonts">
+                <select id="fonts" onclick="onSelectFont(this)">
                     <option class="opt" value="impact">Impact</option>
                     <option class="opt" value="arial">Arial</option>
                     <option class="opt" value="consolas">Consolas</option>
                 </select>
-                <button><input type="color" class="colorPickerStroke" value="#fff" onclick="onStrokeColor()"><img src="img/ICONS/text stroke.png" alt=""></button>
-                <button><input type="color" class="colorPicker" value="#fff" onclick="onFillColor()"><img src="img/ICONS/paint-board-and-brush.png" alt=""></button>
+                <button><input type="color" class="colorPickerStroke" onclick="onStrokeColor()"><img src="img/ICONS/text stroke.png" alt=""></button>
+                <button><input type="color" class="colorPicker" onclick="onFillColor()"><img src="img/ICONS/paint-board-and-brush.png" alt=""></button>
             </div>
             <div class="download">
                 <button><a href="#" onclick="onDownload(this)"><h2>Download Meme</h2><i class="fas fa-file-download"></i></a></button>

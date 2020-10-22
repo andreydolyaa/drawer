@@ -16,8 +16,9 @@ function renderMeme() {
         var strokeColor = line.strokeColor;
         var posX = line.x;
         var posY = line.y;
+        var font = line.font;
         drawFocus()
-        drawText(txt, size, align, fillColor, strokeColor, posX, posY);
+        drawText(txt, size, align, fillColor, strokeColor, posX, posY,font);
     });
 
 }
@@ -43,11 +44,11 @@ function onImgClicked(imgId) {
 }
 
 
-function drawText(text, fontSize, align, innerColor, strokeColor, x, y) {
+function drawText(text, fontSize, align, innerColor, strokeColor, x, y,font) {
     gCtx.strokeStyle = strokeColor;
     gCtx.fillStyle = innerColor;
     gCtx.lineWidth = '2';
-    gCtx.font = `${fontSize}px impact`;
+    gCtx.font = `${fontSize}px ${font}`;
     gCtx.textAlign = align;
     gCtx.fillText(text, x, y);
     gCtx.strokeText(text, x, y);
@@ -62,17 +63,17 @@ function drawImg() {
     gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
 }
 
-function onAlignToLeft(){
+function onAlignToLeft() {
     alignToLeft();
     renderMeme();
 }
 
-function onAlignToRight(){
+function onAlignToRight() {
     alignToRight();
     renderMeme();
 }
 
-function onAlignToCenter(){
+function onAlignToCenter() {
     alignToCenter();
     renderMeme();
 }
@@ -132,18 +133,23 @@ function onDownload(elLink) {
     elLink.download = 'puki.jpg'
 }
 
-function onStrokeColor(){
+function onStrokeColor() {
     var color = document.querySelector('.colorPickerStroke');
-    color.addEventListener('input',function(){
+    color.addEventListener('input', function () {
         setStrokeColor(color.value);
         renderMeme();
     });
 }
 
-function onFillColor(){
+function onFillColor() {
     var color = document.querySelector('.colorPicker');
-    color.addEventListener('input',function(){
+    color.addEventListener('input', function () {
         setFillColor(color.value);
         renderMeme();
     });
+}
+
+function onSelectFont(val){
+    setFontFamily(val.value);
+    renderMeme();
 }

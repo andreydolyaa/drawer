@@ -10,13 +10,13 @@ function createMeme() {
         selectedImgId: null,
         selectedLineIdx: 0,
         lines: [
-            { txt: 'your text here', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: 300, y: 100 }
+            { txt: 'your text here', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: 300, y: 100,font:'impact' }
         ]
     }
 }
 
 function createMemeText(x, y) {
-    return { txt: 'your text here', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: x, y: y }
+    return { txt: 'your text here', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: x, y: y,font:'impact' }
 }
 
 function getMeme() {
@@ -102,6 +102,8 @@ function setFillColor(val){
     gMeme.lines[gMeme.selectedLineIdx].innerColor = val;
 }
 
-
+function setFontFamily(val){
+    gMeme.lines[gMeme.selectedLineIdx].font = val;
+}
 
 
