@@ -256,6 +256,20 @@ img {
     }
 }
 
+@media(max-width:1000px){
+    .meme-editor{
+        flex-direction: column;
+    }
+    canvas{
+        margin:auto;
+        width:500px;
+        height:500px;
+    }
+    .control-box{
+        margin-top:1rem;
+    }
+}
+
 @media(max-width:720px) {
     .grid-container {
         grid-template-columns: repeat(2, 1fr);
@@ -267,6 +281,20 @@ img {
     .hamburger-icon {
         font-size: 1.5rem;
         display: block;
+    }
+}
+
+@media(max-width:530px){
+    .meme-editor{
+        flex-direction: column;
+    }
+    canvas{
+        margin:auto;
+        width:400px;
+        height:400px;
+    }
+    .control-box{
+        margin-top:1rem;
     }
 }
 
