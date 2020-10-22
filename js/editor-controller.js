@@ -97,8 +97,11 @@ function onFocusText(){
 }
 
 function drawFocus(){
+    var txt = document.querySelector('#img-txt').value;
+    var meme = getMeme();
     var position = getPosition();
-    drawRect(position.x,position.y);
+    if(txt === '' && meme.selectedLineIdx > 1) return
+    else drawRect(position.x,position.y);
 }
 
 
@@ -114,5 +117,3 @@ function drawRect(x, y) {
 
 
 
-
-console.log(gMeme);
