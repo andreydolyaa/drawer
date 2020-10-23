@@ -2,6 +2,7 @@
 
 
 var gMeme;
+var gTxtId = 0;
 createMeme();
 
 
@@ -10,13 +11,13 @@ function createMeme() {
         selectedImgId: null,
         selectedLineIdx: 0,
         lines: [
-            { txt: 'your text here', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: 300, y: 100, font: 'impact' }
+            {txt: 'your text here', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: 300, y: 100, font: 'impact'}
         ]
     }
 }
 
 function createMemeText(x, y) {
-    return { txt: 'your text here', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: x, y: y, font: 'impact' }
+    return { txt: 'your text here', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: x, y: y, font: 'impact'}
 }
 
 function getMeme() {
@@ -49,6 +50,8 @@ function getPosition() {
 }
 
 function focusText() {
+    // console.log('selectedLineIdx:',gMeme.selectedLineIdx);
+    // console.log('new txt id:',gMeme.lines[gMeme.selectedLineIdx].id);
     if (gMeme.lines.length === 0) return;
     gMeme.selectedLineIdx += 1
     if (gMeme.selectedLineIdx === gMeme.lines.length) gMeme.selectedLineIdx = 0;
@@ -75,7 +78,10 @@ function moveTextDown() {
 }
 
 function deleteText() {
-    gMeme.lines.splice(0, gMeme.lines.length);
+    gMeme.lines.splice(0,gMeme.lines.length);
+    // gMeme.lines.splice(gMeme.lines[gMeme.selectedLineIdx].id,1);
+    // console.log('txt id:',gMeme.lines[gMeme.selectedLineIdx].id);
+    // console.log('deleted line : --->',gMeme.lines[gMeme.selectedLineIdx].id);
 }
 
 function alignToLeft() {
@@ -103,3 +109,8 @@ function setFontFamily(val) {
 }
 
 
+
+
+// function deleteText() {
+//     gMeme.lines.splice(0, gMeme.lines.length);
+// }

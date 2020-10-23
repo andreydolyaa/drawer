@@ -1,6 +1,6 @@
 'use strict';
 
-var gCurrImgId;
+var gCurrTxtPos = { x: 0, y: 0 };
 var gCurrFocusColor = 'rgba(60, 60, 60,1)';
 
 
@@ -18,7 +18,7 @@ function renderMeme() {
         var posX = line.x;
         var posY = line.y;
         var font = line.font;
-        drawFocus();
+        if (txt) drawFocus();
         drawText(txt, size, align, fillColor, strokeColor, posX, posY, font);
     });
 
@@ -104,6 +104,18 @@ function onDeleteText() {
     renderMeme();
 }
 
+
+// function clearCanvas() {
+// //     var meme = getMeme();
+// //     var txtWidth = gCtx.measureText(meme.lines[meme.selectedLineIdx].txt).width;
+// //     var lineHeight = meme.lines[meme.selectedLineIdx].size
+//     gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height)
+// //     // You may clear part of the canvas
+// //     gCtx.clearRect(gCurrTxtPos.x, gCurrTxtPos.y, txtWidth,lineHeight);
+// //     console.log(gCurrTxtPos.x, gCurrTxtPos.y);
+// }
+
+
 function onFocusText() {
     document.querySelector('#img-txt').value = '';
     focusText();
@@ -112,6 +124,9 @@ function onFocusText() {
 
 
 function drawFocus() {
+    var meme = getMeme()
+    // if(meme.lines[meme.selectedLineIdx].txt === undefined) return
+    // else drawRect();
     drawRect();
 }
 
@@ -128,6 +143,7 @@ function drawRect() {
     gCtx.rect(x - txtWidth / 2, y, txtWidth, lineHeight);
     gCtx.strokeStyle = gCurrFocusColor;
     gCtx.stroke();
+    gCurrTxtPos = { x: x - txtWidth / 2, y };
 }
 
 
