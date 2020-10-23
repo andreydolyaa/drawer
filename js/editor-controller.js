@@ -31,6 +31,7 @@ function onChangeText() {
 }
 
 function onAddText() {
+    gCurrFocusColor = 'rgba(60, 60, 60,1)';
     addText();
     focusText();
     renderMeme();
