@@ -1,7 +1,7 @@
 'use strict';
 
 var gCurrImgId;
-
+var gCurrFocusColor = 'rgba(60, 60, 60,1)';
 
 
 
@@ -18,7 +18,7 @@ function renderMeme() {
         var posX = line.x;
         var posY = line.y;
         var font = line.font;
-        drawFocus()
+        drawFocus();
         drawText(txt, size, align, fillColor, strokeColor, posX, posY, font);
     });
 
@@ -111,18 +111,7 @@ function onFocusText() {
 }
 
 
-
-
-
-
-
 function drawFocus() {
-    // var position = getPosition();
-    // if (!position.x || !position.y) {
-    //     drawRect(255, 155);
-    // } else {
-    //     drawRect(position.x,position.y);
-    // }
     drawRect();
 }
 
@@ -137,12 +126,15 @@ function drawRect() {
     gCtx.textBaseline = "top";
     gCtx.textBaseline = "center";
     gCtx.rect(x - txtWidth / 2, y, txtWidth, lineHeight);
-    gCtx.strokeStyle = 'rgba(255, 0, 0, 0.5)';
+    gCtx.strokeStyle = gCurrFocusColor;
     gCtx.stroke();
 }
 
 
-
+function onDeleteFocus() {
+    gCurrFocusColor = 'rgba(60, 60, 60, 0)';
+    renderMeme();
+}
 
 
 
