@@ -7,7 +7,9 @@
     font-family: mont;
     src: url(../fonts/Montserrat-Regular.ttf);
 }
-
+html{
+    scroll-behavior: smooth;
+}
 body {
     background-color: rgb(238, 238, 238);
     font-family: mont;
@@ -253,6 +255,76 @@ img {
     opacity:0;
     cursor: pointer;
 }
+/**************** profile **********************/
+.profile{
+    
+    height:750px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+}
+.profile-items{
+    max-width:1200px;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    margin:auto;
+}
+.profile-img img{
+    width:15rem;
+    height:15rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.profile-txt{
+    width:50%;
+    display: flex;
+    flex-direction: column;
+    padding:1.5rem;
+}
+.profile-txt h1{
+    margin-bottom:1rem;
+}
+.profile-icons{
+    font-size:1rem;
+    display: flex;
+}
+.profile-icons a{
+    color: #fff;
+    text-decoration: none;
+    outline: none;
+    margin-right:10px;
+    margin-top:2rem;
+}
+.profile-icons i{
+    background-color:#ff7f00;
+    height:25px;
+    width:25px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+.profile-icons i:hover{
+    background-color: #258c64;
+}
+
+/************ footer ***************/
+footer{
+    height:210px;
+    background: #ff7f00;
+    color:white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+footer h1{
+    padding:10px;
+}
 /************* meida ***********************/
 
 @media(max-width:1200px) {
@@ -296,6 +368,16 @@ img {
         font-size: 1.5rem;
         display: block;
     }
+    .profile-items{
+        flex-direction: column;
+        text-align: center;
+    }
+    .profile-txt{
+        width:90%;
+    }
+    .profile-icons{
+        margin:auto;
+    }
 }
 
 @media(max-width:530px){
@@ -327,4 +409,5 @@ img {
         width:370px;
         height:370px;
     }
+
 }

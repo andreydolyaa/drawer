@@ -27,24 +27,29 @@ function renderGallery() {
 function toggleEditor() {
     var gallery = document.querySelector('.meme-gallery');
     var editor = document.querySelector('.meme-editor');
+    var profile = document.querySelector('.profile');
     if (!gEditorIsOn) {
         editor.style.display = 'none';
         gallery.style.display = 'block';
+        profile.style.display = 'flex';
     }
     else {
         editor.style.display = 'flex';
         gallery.style.display = 'none';
+        profile.style.display = 'none';
         gEditorIsOn = false;
     }
 }
 
-function onOpenMenu(){
+function onOpenMenu() {
     var elNav = document.querySelector('.mobile-nav');
-    if(!gNavOpen){
+    if (!gNavOpen) {
         elNav.style.display = 'block';
         gNavOpen = true;
-    }else{
+    } else {
         elNav.style.display = 'none';
         gNavOpen = false;
     }
 }
+
+
