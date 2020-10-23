@@ -52,7 +52,7 @@ function getPosition() {
 }
 
 function focusText() {
-    if (gMeme.lines.length === 0) return;
+    if (gMeme.lines.length === 0) gMeme.selectedLineIdx = 0;
     gMeme.selectedLineIdx += 1
     if (gMeme.selectedLineIdx === gMeme.lines.length) gMeme.selectedLineIdx = 0;
 }
