@@ -36,8 +36,10 @@ function changeText(txt) {
 
 
 function addText() {
-    if (gMeme.lines.length === 1) gMeme.lines.push(createMemeText(300, 500));
+    if (gMeme.lines.length === 0) gMeme.lines.push(createMemeText(300, 100));
+    else if (gMeme.lines.length === 1) gMeme.lines.push(createMemeText(300, 500));
     else gMeme.lines.push(createMemeText(300, getRandomIntInclusive(150, 450)));
+    console.log(gMeme.lines);
 }
 
 
@@ -50,8 +52,6 @@ function getPosition() {
 }
 
 function focusText() {
-    // console.log('selectedLineIdx:',gMeme.selectedLineIdx);
-    // console.log('new txt id:',gMeme.lines[gMeme.selectedLineIdx].id);
     if (gMeme.lines.length === 0) return;
     gMeme.selectedLineIdx += 1
     if (gMeme.selectedLineIdx === gMeme.lines.length) gMeme.selectedLineIdx = 0;
@@ -79,9 +79,7 @@ function moveTextDown() {
 
 function deleteText() {
     gMeme.lines.splice(0,gMeme.lines.length);
-    // gMeme.lines.splice(gMeme.lines[gMeme.selectedLineIdx].id,1);
-    // console.log('txt id:',gMeme.lines[gMeme.selectedLineIdx].id);
-    // console.log('deleted line : --->',gMeme.lines[gMeme.selectedLineIdx].id);
+    gMeme.selectedLineIdx = 0;
 }
 
 function alignToLeft() {
@@ -112,5 +110,5 @@ function setFontFamily(val) {
 
 
 // function deleteText() {
-//     gMeme.lines.splice(0, gMeme.lines.length);
+//     gMeme.lines.splice(gMeme.lines[gMeme.selectedLineIdx],1);
 // }
