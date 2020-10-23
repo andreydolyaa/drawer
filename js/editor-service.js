@@ -10,13 +10,13 @@ function createMeme() {
         selectedImgId: null,
         selectedLineIdx: 0,
         lines: [
-            { txt: 'your text here', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: 300, y: 100,font:'impact' }
+            { txt: 'your text here', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: 300, y: 100, font: 'impact' }
         ]
     }
 }
 
 function createMemeText(x, y) {
-    return { txt: 'your text here', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: x, y: y,font:'impact' }
+    return { txt: 'your text here', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: x, y: y, font: 'impact' }
 }
 
 function getMeme() {
@@ -51,9 +51,7 @@ function getPosition() {
 function focusText() {
     if (gMeme.lines.length === 0) return;
     gMeme.selectedLineIdx += 1
-    if (gMeme.selectedLineIdx === gMeme.lines.length) {
-        gMeme.selectedLineIdx = 0;
-    }
+    if (gMeme.selectedLineIdx === gMeme.lines.length) gMeme.selectedLineIdx = 0;
 }
 
 function getFontSize() {
@@ -78,8 +76,6 @@ function moveTextDown() {
 
 function deleteText() {
     gMeme.lines.splice(0, gMeme.lines.length);
-
-    console.log(gMeme.lines);
 }
 
 function alignToLeft() {
@@ -94,15 +90,15 @@ function alignToCenter() {
     gMeme.lines[gMeme.selectedLineIdx].align = 'center';
 }
 
-function setStrokeColor(val){
+function setStrokeColor(val) {
     gMeme.lines[gMeme.selectedLineIdx].strokeColor = val;
 }
 
-function setFillColor(val){
+function setFillColor(val) {
     gMeme.lines[gMeme.selectedLineIdx].innerColor = val;
 }
 
-function setFontFamily(val){
+function setFontFamily(val) {
     gMeme.lines[gMeme.selectedLineIdx].font = val;
 }
 

@@ -64,7 +64,7 @@ header nav .container ul li:first-child {
 
 canvas {
     display: block;
-    border: 1px solid black;
+    border: 1px solid rgb(135, 135, 135);
     background-color: rgb(255, 255, 255);
 }
 
@@ -315,5 +315,16 @@ img {
 @media(max-width:380px) {
     .grid-container {
         grid-template-columns: repeat(1, 1fr);
+    }
+    .control-box{
+        padding:15px;
+    }
+    .add-text #img-txt{
+        width:345px;
+    }
+    canvas{
+        margin:auto;
+        width:370px;
+        height:370px;
     }
 }

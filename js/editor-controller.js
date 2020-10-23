@@ -141,7 +141,7 @@ function onDeleteFocus() {
 function onDownload(elLink) {
     const data = gCanvas.toDataURL()
     elLink.href = data
-    elLink.download = 'puki.jpg'
+    elLink.download = 'meme.jpg'
 }
 
 function onStrokeColor() {
@@ -166,9 +166,3 @@ function onSelectFont(val) {
 }
 
 
-// function drawRect(x, y) {
-//     gCtx.beginPath()
-//     gCtx.rect(x / 2, y / 2, x, y)
-//     gCtx.strokeStyle = 'black'
-//     gCtx.stroke()
-// }
