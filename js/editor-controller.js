@@ -5,6 +5,7 @@ var gCurrImgId;
 
 
 
+
 function renderMeme() {
     var meme = getMeme();
     drawImg();
@@ -18,7 +19,7 @@ function renderMeme() {
         var posY = line.y;
         var font = line.font;
         drawFocus()
-        drawText(txt, size, align, fillColor, strokeColor, posX, posY,font);
+        drawText(txt, size, align, fillColor, strokeColor, posX, posY, font);
     });
 
 }
@@ -44,7 +45,7 @@ function onImgClicked(imgId) {
 }
 
 
-function drawText(text, fontSize, align, innerColor, strokeColor, x, y,font) {
+function drawText(text, fontSize, align, innerColor, strokeColor, x, y, font) {
     gCtx.strokeStyle = strokeColor;
     gCtx.fillStyle = innerColor;
     gCtx.lineWidth = '2';
@@ -109,22 +110,40 @@ function onFocusText() {
     renderMeme();
 }
 
+
+
+
+
+
+
 function drawFocus() {
-    var position = getPosition();
-    if (!position.x || !position.y) {
-        drawRect(255, 155);
-    } else {
-        drawRect(position.x, position.y);
-    }
+    // var position = getPosition();
+    // if (!position.x || !position.y) {
+    //     drawRect(255, 155);
+    // } else {
+    //     drawRect(position.x,position.y);
+    // }
+    drawRect();
 }
 
 
-function drawRect(x, y) {
+function drawRect() {
+    var meme = getMeme();
+    var txtWidth = gCtx.measureText(meme.lines[meme.selectedLineIdx].txt).width;
+    var lineHeight = meme.lines[meme.selectedLineIdx].size
+    var x = meme.lines[meme.selectedLineIdx].x;
+    var y = meme.lines[meme.selectedLineIdx].y;
     gCtx.beginPath()
-    gCtx.rect(x / 2, y / 2, x, y)
-    gCtx.strokeStyle = 'black'
-    gCtx.stroke()
+    gCtx.textBaseline = "top";
+    gCtx.textBaseline = "center";
+    gCtx.rect(x - txtWidth / 2, y, txtWidth, lineHeight);
+    gCtx.strokeStyle = 'rgba(255, 0, 0, 0.5)';
+    gCtx.stroke();
 }
+
+
+
+
 
 
 function onDownload(elLink) {
@@ -149,7 +168,15 @@ function onFillColor() {
     });
 }
 
-function onSelectFont(val){
+function onSelectFont(val) {
     setFontFamily(val.value);
     renderMeme();
 }
+
+
+// function drawRect(x, y) {
+//     gCtx.beginPath()
+//     gCtx.rect(x / 2, y / 2, x, y)
+//     gCtx.strokeStyle = 'black'
+//     gCtx.stroke()
+// }
