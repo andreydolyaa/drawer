@@ -108,7 +108,7 @@ function renderFontSizes() {
     for (var key in keywords) {
         for (var i = 0; i < btns.length; i++) {
             if (btns[i].innerText === key) {
-                var size = 14
+                var size = 14;
                 btns[i].style.fontSize = size + keywords[key] + 'px';
             }
         }
