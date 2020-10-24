@@ -2,9 +2,10 @@
 
 
 
+const NUM_OF_IMGS = 18;
 var gFiltredImgs;
-var numOfImgs = 18;
 var gImgs = _createImgs();
+console.log(gImgs);
 createKeywords();
 
 
@@ -12,7 +13,7 @@ function getImgs() {
     return gImgs;
 }
 
-function getFiltredImgs(){
+function getFiltredImgs() {
     return gFiltredImgs;
 }
 
@@ -25,7 +26,7 @@ function getImgUrl(imgId) {
 
 function _createImgs() {
     var imgs = [];
-    for (var i = 1; i <= numOfImgs; i++) {
+    for (var i = 1; i <= NUM_OF_IMGS; i++) {
         imgs.push(_createImg(i, i));
     }
     return imgs;
@@ -39,27 +40,28 @@ function _createImg(id, url) {
     };
 }
 
-console.log(gImgs);
 
 
-function searchKeywords(keyword){
-    gFiltredImgs = gImgs.filter(img => img.keywords.includes(keyword))
+
+function searchKeywords(keyword) {
+    gFiltredImgs = gImgs.filter(img => img.keywords.includes(keyword.toLowerCase()));
     return gFiltredImgs;
 }
 
-// console.log(searchKeywords('cute'));
+
+
 
 function createKeywords() {
-    gImgs[0].keywords.push('man');
-    gImgs[1].keywords.push('dog', 'cute');
-    gImgs[2].keywords.push('baby', 'dog', 'cute');
-    gImgs[3].keywords.push('cat', 'cute');
+    gImgs[0].keywords.push('man', 'donald', 'trump', 'president');
+    gImgs[1].keywords.push('dog', 'cute', 'animal');
+    gImgs[2].keywords.push('baby', 'dog', 'cute', 'animal');
+    gImgs[3].keywords.push('cat', 'cute', 'animal');
     gImgs[4].keywords.push('baby', 'cute', 'funny');
     gImgs[5].keywords.push('man', 'funny');
     gImgs[6].keywords.push('baby', 'cute', 'funny');
     gImgs[7].keywords.push('man', 'funny');
     gImgs[8].keywords.push('baby', 'cute', 'funny');
-    gImgs[9].keywords.push('man', 'funny');
+    gImgs[9].keywords.push('man', 'funny', 'president');
     gImgs[10].keywords.push('man', 'funny');
     gImgs[11].keywords.push('man');
     gImgs[12].keywords.push('man', 'happy');

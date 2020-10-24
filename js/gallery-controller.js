@@ -23,7 +23,7 @@ function renderGallery() {
     if (gIsSearching) {
         strHTMLs = filtredImgs.map(function (img) {
             return `
-            <div class"gal-img" id="${img.id}" onclick="onImgClicked('${img.id}')"><img src="${img.url}"></div>
+        <div class"gal-img" id="${img.id}" onclick="onImgClicked('${img.id}')"><img src="${img.url}"></div>
             `
         });
         document.querySelector('.meme-gallery .grid-container').innerHTML = strHTMLs.join('');
@@ -41,15 +41,18 @@ function toggleEditor() {
     var gallery = document.querySelector('.meme-gallery');
     var editor = document.querySelector('.meme-editor');
     var profile = document.querySelector('.profile');
+    var search = document.querySelector('.input-container');
     if (!gEditorIsOn) {
         editor.style.display = 'none';
         gallery.style.display = 'block';
         profile.style.display = 'flex';
+        search.style.display = 'block';
     }
     else {
         editor.style.display = 'flex';
         gallery.style.display = 'none';
         profile.style.display = 'none';
+        search.style.display = 'none';
         gEditorIsOn = false;
     }
 }
