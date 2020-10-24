@@ -98,7 +98,7 @@ function increaseBtnFonts(id) {
     var btn = document.querySelector(`#${id}`);
     var currFontSize = btn.style.fontSize;
     var fontSize = currFontSize.split('px').join('');
-    btn.style.fontSize = (+fontSize + 4) + 'px';
+    btn.style.fontSize = (+fontSize + 6) + 'px';
 }
 
 function renderFontSizes() {
