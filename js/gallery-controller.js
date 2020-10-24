@@ -37,6 +37,7 @@ function renderGallery() {
     }
 }
 
+
 function toggleEditor() {
     var gallery = document.querySelector('.meme-gallery');
     var editor = document.querySelector('.meme-editor');
@@ -80,4 +81,14 @@ function onSearch() {
     }
 }
 
-
+function onSearchBtn(val){
+    console.log(val);
+    gIsSearching = true;
+    if (val === '') {
+        gIsSearching = false
+        renderGallery();
+    } else {
+        searchKeywords(val);
+        renderGallery();
+    }
+}

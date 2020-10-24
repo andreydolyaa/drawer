@@ -49,7 +49,9 @@ function searchKeywords(keyword) {
 }
 
 
-
+function getKeywords(){
+    return {'man':12,'cute':6,'animal':3,'baby':4,'donald':1,'trump':1,'president':2,'dog':2,'cat':1,'funny':10}
+}
 
 function createKeywords() {
     gImgs[0].keywords.push('man', 'donald', 'trump', 'president');

@@ -334,9 +334,15 @@ footer h1{
 .search{
     max-width: 1200px;
     height:10.625rem;
-    margin: auto;
+    
     display:flex;
     align-items: center;
+}
+.search-bar-keys{
+    max-width:1200px;
+    display:flex;
+    align-items: center;
+    margin:auto;
 }
 .search input{
     width:16.25rem;
@@ -349,6 +355,13 @@ footer h1{
 }
 .fa-search{
     cursor: pointer;
+}
+
+/******* keywords **********/
+.keywords button{
+    border:none;
+    background-color: transparent;
+    margin-left:3rem;
 }
 /************* meida ***********************/
 
@@ -379,6 +392,14 @@ footer h1{
     .control-box{
         margin-top:1rem;
     }
+    .search-bar-keys{
+        flex-direction: column;
+
+    }
+    .keywords button{
+        margin-left:2rem;
+        margin-bottom:1rem;
+    }
 }
 
 @media(max-width:720px) {
@@ -403,6 +424,9 @@ footer h1{
     .profile-icons{
         margin:auto;
     }
+    .keywords button{
+        margin-left:1rem;
+    }
 }
 
 @media(max-width:530px){
@@ -416,6 +440,10 @@ footer h1{
     }
     .control-box{
         margin-top:1rem;
+    }
+    .keywords button{
+        margin-left:1rem;
+        margin-bottom:1rem;
     }
 }
 
@@ -433,6 +461,10 @@ footer h1{
         margin:auto;
         width:370px;
         height:370px;
+    }
+    .keywords button{
+        margin-left:.5rem;
+        margin-bottom:1rem;
     }
 
 }
