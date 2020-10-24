@@ -6,10 +6,10 @@ var gEditorIsOn = false;
 var gNavOpen = false;
 var gIsSearching = false;
 
-
 function onInit() {
     gCanvas = document.querySelector('#my-canvas');
     gCtx = gCanvas.getContext('2d');
+    renderFontSizes()
     renderGallery();
     renderMeme();
 }
@@ -81,14 +81,36 @@ function onSearch() {
     }
 }
 
-function onSearchBtn(val){
-    console.log(val);
+function onSearchBtn(val, id) {
     gIsSearching = true;
     if (val === '') {
         gIsSearching = false
         renderGallery();
     } else {
         searchKeywords(val);
+        increaseBtnFonts(id);
         renderGallery();
     }
 }
+
+
+function increaseBtnFonts(id) {
+    var btn = document.querySelector(`#${id}`);
+    var currFontSize = btn.style.fontSize;
+    var fontSize = currFontSize.split('px').join('');
+    btn.style.fontSize = (+fontSize + 4) + 'px';
+}
+
+function renderFontSizes() {
+    var keywords = getKeywordsCount();
+    var btns = document.querySelectorAll('.keywords button');
+    for (var key in keywords) {
+        for (var i = 0; i < btns.length; i++) {
+            if (btns[i].innerText === key) {
+                var size = 16
+                btns[i].style.fontSize = size + keywords[key] + 'px';
+            }
+        }
+    }
+}
+

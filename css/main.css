@@ -362,6 +362,9 @@ footer h1{
     border:none;
     background-color: transparent;
     margin-left:3rem;
+    cursor: pointer;
+    outline: none;
+    font-size: 1rem;
 }
 /************* meida ***********************/
 

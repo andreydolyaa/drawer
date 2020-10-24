@@ -49,7 +49,7 @@ function searchKeywords(keyword) {
 }
 
 
-function getKeywords(){
+function getKeywordsCount(){
     return {'man':12,'cute':6,'animal':3,'baby':4,'donald':1,'trump':1,'president':2,'dog':2,'cat':1,'funny':10}
 }
 
