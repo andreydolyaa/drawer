@@ -4,6 +4,7 @@ var gCanvas;
 var gCtx;
 var gEditorIsOn = false;
 var gNavOpen = false;
+var gIsSearching = false;
 
 
 function onInit() {
@@ -16,12 +17,24 @@ function onInit() {
 
 function renderGallery() {
     var imgs = getImgs();
-    var strHTMLs = imgs.map(function (img) {
-        return `
+    var filtredImgs = getFiltredImgs();
+    var strHTMLs = '';
+
+    if (gIsSearching) {
+        strHTMLs = filtredImgs.map(function (img) {
+            return `
+            <div class"gal-img" id="${img.id}" onclick="onImgClicked('${img.id}')"><img src="${img.url}"></div>
+            `
+        });
+        document.querySelector('.meme-gallery .grid-container').innerHTML = strHTMLs.join('');
+    } else {
+        strHTMLs = imgs.map(function (img) {
+            return `
         <div class"gal-img" id="${img.id}" onclick="onImgClicked('${img.id}')"><img src="${img.url}"></div>
         `
-    });
-    document.querySelector('.meme-gallery .grid-container').innerHTML = strHTMLs.join('');
+        });
+        document.querySelector('.meme-gallery .grid-container').innerHTML = strHTMLs.join('');
+    }
 }
 
 function toggleEditor() {
@@ -49,6 +62,18 @@ function onOpenMenu() {
     } else {
         elNav.style.display = 'none';
         gNavOpen = false;
+    }
+}
+
+function onSearch() {
+    gIsSearching = true;
+    var searchInput = document.querySelector('.search-input');
+    if (searchInput.value === '') {
+        gIsSearching = false
+        renderGallery();
+    } else {
+        searchKeywords(searchInput.value);
+        renderGallery();
     }
 }
 

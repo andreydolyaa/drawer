@@ -11,7 +11,7 @@ function createMeme() {
         selectedImgId: null,
         selectedLineIdx: 0,
         lines: [
-            {txt: 'your text here', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: 300, y: 100, font: 'impact'}
+            {txt: 'your text here', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: 300, y: 100, font: 'impact',id:1}
         ]
     }
 }

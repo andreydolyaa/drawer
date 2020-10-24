@@ -171,12 +171,6 @@ function onSelectFont(val) {
 
 
 
-
-
-
-
-
-
 // function clearCanvas() {
 // //     var meme = getMeme();
 // //     var txtWidth = gCtx.measureText(meme.lines[meme.selectedLineIdx].txt).width;
