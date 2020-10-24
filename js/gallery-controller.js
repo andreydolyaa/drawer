@@ -98,7 +98,8 @@ function increaseBtnFonts(id) {
     var btn = document.querySelector(`#${id}`);
     var currFontSize = btn.style.fontSize;
     var fontSize = currFontSize.split('px').join('');
-    btn.style.fontSize = (+fontSize + 6) + 'px';
+    if(+fontSize > 40) return
+    else btn.style.fontSize = (+fontSize + 6) + 'px';
 }
 
 function renderFontSizes() {
@@ -107,7 +108,7 @@ function renderFontSizes() {
     for (var key in keywords) {
         for (var i = 0; i < btns.length; i++) {
             if (btns[i].innerText === key) {
-                var size = 16
+                var size = 14
                 btns[i].style.fontSize = size + keywords[key] + 'px';
             }
         }
