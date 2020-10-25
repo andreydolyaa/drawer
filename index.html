@@ -58,7 +58,7 @@
 
     <div class="meme-editor">
         <div class="canvas-container">
-            <canvas id="my-canvas" width="600px" height="600px"></canvas>
+            <canvas id="my-canvas" width="600px" height="600px" onmousedown="onStartDrag()" onmousemove="onDragTxt(event)" onmouseup="onStopDrag()"></canvas>
         </div>
         <div class="control-box">
             <div class="add-text">

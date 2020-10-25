@@ -2,6 +2,7 @@
 
 var gCurrTxtPos = { x: 0, y: 0 };
 var gCurrFocusColor = 'rgba(60, 60, 60,1)';
+var gIsDrag = false;
 
 
 
@@ -166,6 +167,33 @@ function onSelectFont(val) {
     renderMeme();
 }
 
+
+
+function onStartDrag() {
+    gIsDrag = true;
+}
+
+function onDragTxt(ev) {
+    if (gIsDrag) {
+        var meme = getMeme();
+        var txt = meme.lines[meme.selectedLineIdx];
+        txt.x = ev.offsetX;
+        txt.y = ev.offsetY;
+        renderMeme();
+    }
+    else return;
+}
+
+function onStopDrag() {
+    gIsDrag = false;
+}
+
+// function onSelectText(id){
+//     selectLine(id);
+//     console.log(id);
+//     focusText();
+//     renderMeme();
+// }
 
 
 

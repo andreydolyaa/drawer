@@ -2,7 +2,6 @@
 
 
 var gMeme;
-var gTxtId = 0;
 createMeme();
 
 
@@ -11,7 +10,7 @@ function createMeme() {
         selectedImgId: null,
         selectedLineIdx: 0,
         lines: [
-            {txt: 'your text here', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: 300, y: 100, font: 'impact',id:1}
+            {txt: 'your text here', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: 300, y: 100, font: 'impact'}
         ]
     }
 }
@@ -106,6 +105,10 @@ function setFontFamily(val) {
     gMeme.lines[gMeme.selectedLineIdx].font = val;
 }
 
+
+function selectLine(id){
+    gMeme.lines[gMeme.selectedLineIdx];
+}
 
 
 

@@ -374,7 +374,7 @@ footer h1{
 }
 /************* meida ***********************/
 
-@media(max-width:1200px) {
+@media(max-width:1230px) {
     header nav .container h1 {
         margin-left: 1rem;
     }
@@ -389,6 +389,9 @@ footer h1{
     }
     .keywords button{
         margin-left:1rem;
+    }
+    .meme-editor{
+        padding-left:1rem;
     }
 }
 
