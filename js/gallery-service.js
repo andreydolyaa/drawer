@@ -44,7 +44,7 @@ function _createImg(id, url) {
 
 
 function searchKeywords(keyword) {
-    gFiltredImgs = gImgs.filter(img => img.keywords.includes(keyword.toLowerCase()));
+    gFiltredImgs = gImgs.filter(img => img.keywords.some(word => word.includes(keyword.toLowerCase())));
     return gFiltredImgs;
 }
 

@@ -331,6 +331,7 @@ img {
 
 /************ footer ***************/
 footer{
+    margin-top:auto;
     height:210px;
     background: #ff7f00;
     color:white;
@@ -393,7 +394,7 @@ footer h1{
 #saved-memes{
     display:none;
     max-width:1200px;
-    min-height:500px;
+    min-height:675px;
     margin:auto;
 }
 .memes{
@@ -426,6 +427,8 @@ footer h1{
     color: #00b315;
     
 }
+
+
 
 /************* meida ***********************/
 

@@ -5,11 +5,6 @@ var gSavedMemes = [];
 loadMemes();
 
 
-
-
-
-
-
 function saveMeme() {
     var dataURL = gCanvas.toDataURL();
     gSavedMemes.push(dataURL);
