@@ -10,13 +10,13 @@ function createMeme() {
         selectedImgId: null,
         selectedLineIdx: 0,
         lines: [
-            {txt: 'your text here', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: 300, y: 100, font: 'impact'}
+            { txt: 'your text here', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: 300, y: 100, font: 'impact' }
         ]
     }
 }
 
 function createMemeText(x, y) {
-    return { txt: 'your text here', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: x, y: y, font: 'impact'}
+    return { txt: 'your text here', size: 48, align: 'center', innerColor: 'white', strokeColor: 'black', x: x, y: y, font: 'impact' }
 }
 
 function getMeme() {
@@ -77,7 +77,7 @@ function moveTextDown() {
 }
 
 function deleteText() {
-    gMeme.lines.splice(0,gMeme.lines.length);
+    gMeme.lines.splice(0, gMeme.lines.length);
     gMeme.selectedLineIdx = 0;
 }
 
@@ -106,12 +106,18 @@ function setFontFamily(val) {
 }
 
 
-function selectLine(id){
-    gMeme.lines[gMeme.selectedLineIdx];
-}
+// function selectLine() {
+//     //     console.log(gMeme.findIndex(gMeme.lines[gMeme.selectedLineIdx]));
+//     //    return gMeme.lines[gMeme.selectedLineIdx];
+//     // if (gMeme.lines.length === 0) gMeme.selectedLineIdx = 0;
+//     //     gMeme.selectedLineIdx += 1
+//     //     if (gMeme.selectedLineIdx === gMeme.lines.length) gMeme.selectedLineIdx = 0;
+    
+// }
 
 
 
 // function deleteText() {
 //     gMeme.lines.splice(gMeme.lines[gMeme.selectedLineIdx],1);
+//     gMeme.selectedLineIdx--;
 // }

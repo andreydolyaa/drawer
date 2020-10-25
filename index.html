@@ -21,44 +21,37 @@
             </div>
         </nav>
     </header>
-  
     <div class="mobile-nav">
         <ul>
             <li><a href="#" onclick="toggleEditor()">Gallery</a></li>
             <li><a href="#about">About</a></li>
         </ul>
     </div>
-
     <section class="input-container">
         <div class="search-bar-keys">
-        <div class="search">
-            <input type="search" placeholder="Enter search keyword" class="search-input" oninput="onSearch()"><i class="fas fa-search"></i>
-        </div>
-        <div class="keywords">
-            <button id="btn1" value="man" onclick="onSearchBtn(this.value,this.id)">man</button>
-            <button id="btn2" value="cute" onclick="onSearchBtn(this.value,this.id)">cute</button>
-            <button id="btn3" value="animal" onclick="onSearchBtn(this.value,this.id)">animal</button>
-            <button id="btn4" value="baby" onclick="onSearchBtn(this.value,this.id)">baby</button>
-            <button id="btn5" value="funny" onclick="onSearchBtn(this.value,this.id)">funny</button>
-            <button id="btn6" value="dog" onclick="onSearchBtn(this.value,this.id)">dog</button>
-            <button id="btn7" value="cat" onclick="onSearchBtn(this.value,this.id)">cat</button>
-        </div>
+            <div class="search">
+                <input type="search" placeholder="Enter search keyword" class="search-input" oninput="onSearch()"><i
+                    class="fas fa-search"></i>
+            </div>
+            <div class="keywords">
+                <button id="btn1" value="man" onclick="onSearchBtn(this.value,this.id)">man</button>
+                <button id="btn2" value="cute" onclick="onSearchBtn(this.value,this.id)">cute</button>
+                <button id="btn3" value="animal" onclick="onSearchBtn(this.value,this.id)">animal</button>
+                <button id="btn4" value="baby" onclick="onSearchBtn(this.value,this.id)">baby</button>
+                <button id="btn5" value="funny" onclick="onSearchBtn(this.value,this.id)">funny</button>
+                <button id="btn6" value="dog" onclick="onSearchBtn(this.value,this.id)">dog</button>
+                <button id="btn7" value="cat" onclick="onSearchBtn(this.value,this.id)">cat</button>
+            </div>
         </div>
     </section>
-
-
-
     <div class="meme-gallery container">
         <div class="grid-container">
         </div>
     </div>
-
-
-
-
     <div class="meme-editor">
         <div class="canvas-container">
-            <canvas id="my-canvas" width="600px" height="600px" onmousedown="onStartDrag()" onmousemove="onDragTxt(event)" onmouseup="onStopDrag()"></canvas>
+            <canvas id="my-canvas" width="600px" height="600px" onmousedown="onStartDrag();onSelectTxt()"
+                onmousemove="onDragTxt(event)" onmouseup="onStopDrag()"></canvas>
         </div>
         <div class="control-box">
             <div class="add-text">
@@ -67,7 +60,8 @@
             <div class="btn-add">
                 <button onclick="onTextUp()"><img src="img/ICONS/up-arrow (1).png" alt=""></button>
                 <button onclick="onTextDown()"><img src="img/ICONS/down-arrow.png" alt=""></button>
-                <button onclick="onFocusText()"><img src="img/ICONS/up-and-down-opposite-double-arrows-side-by-side.png" alt=""></button>
+                <button onclick="onFocusText()"><img src="img/ICONS/up-and-down-opposite-double-arrows-side-by-side.png"
+                        alt=""></button>
                 <button onclick="onAddText()"><img src="img/ICONS/add.png" alt=""></button>
                 <button onclick="onDeleteText()"><img src="img/ICONS/trash.png" alt=""></button>
             </div>
@@ -84,29 +78,33 @@
                     <option class="opt" value="arial">Arial</option>
                     <option class="opt" value="consolas">Consolas</option>
                 </select>
-                <button><input type="color" class="colorPickerStroke" onclick="onStrokeColor()"><img src="img/ICONS/text stroke.png" alt=""></button>
-                <button><input type="color" class="colorPicker" onclick="onFillColor()"><img src="img/ICONS/paint-board-and-brush.png" alt=""></button>
+                <button><input type="color" class="colorPickerStroke" onclick="onStrokeColor()"><img
+                        src="img/ICONS/text stroke.png" alt=""></button>
+                <button><input type="color" class="colorPicker" onclick="onFillColor()"><img
+                        src="img/ICONS/paint-board-and-brush.png" alt=""></button>
             </div>
             <div class="download">
-                <button><a href="#" onclick="onDeleteFocus();onDownload(this)"><h2>Download Meme</h2><i class="fas fa-file-download"></i></a></button>
+                <button><a href="#" onclick="onDeleteFocus();onDownload(this)">
+                        <h2>Download Meme</h2><i class="fas fa-file-download"></i>
+                    </a></button>
             </div>
         </div>
     </div>
-
     <section class="profile" id="about">
         <div class="profile-items">
-        <div class="profile-img">
-            <img src="img/profile/33.jpg" alt="">
-        </div>
-        <div class="profile-txt">
-            <h1>Andrey Dolya</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, aut eveniet. Fugiat nemo porro totam, facilis amet eligendi corporis excepturi.</p>
-            <div class="profile-icons">
-            <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://he-il.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://github.com/andreydolyaa?tab=repositories"><i class="fab fa-github"></i></a>
+            <div class="profile-img">
+                <img src="img/profile/33.jpg" alt="">
             </div>
-        </div>
+            <div class="profile-txt">
+                <h1>Andrey Dolya</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, aut eveniet. Fugiat nemo porro
+                    totam, facilis amet eligendi corporis excepturi.</p>
+                <div class="profile-icons">
+                    <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://he-il.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://github.com/andreydolyaa?tab=repositories"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
         </div>
     </section>
     <footer>
@@ -115,11 +113,6 @@
             <p>all rights reserved 2020.</p>
         </div>
     </footer>
-
-    <!-- oninput="onAddText()" -->
-
-
-
     <script src="js/util-service.js"></script>
     <script src="js/gallery-service.js"></script>
     <script src="js/gallery-controller.js"></script>

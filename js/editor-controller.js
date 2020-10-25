@@ -169,6 +169,12 @@ function onSelectFont(val) {
 
 
 
+
+function onSelectTxt() {
+    focusText();
+    renderMeme();
+}
+
 function onStartDrag() {
     gIsDrag = true;
 }
@@ -188,23 +194,3 @@ function onStopDrag() {
     gIsDrag = false;
 }
 
-// function onSelectText(id){
-//     selectLine(id);
-//     console.log(id);
-//     focusText();
-//     renderMeme();
-// }
-
-
-
-
-
-// function clearCanvas() {
-// //     var meme = getMeme();
-// //     var txtWidth = gCtx.measureText(meme.lines[meme.selectedLineIdx].txt).width;
-// //     var lineHeight = meme.lines[meme.selectedLineIdx].size
-//     gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height)
-// //     // You may clear part of the canvas
-// //     gCtx.clearRect(gCurrTxtPos.x, gCurrTxtPos.y, txtWidth,lineHeight);
-// //     console.log(gCurrTxtPos.x, gCurrTxtPos.y);
-// }
