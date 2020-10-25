@@ -44,7 +44,7 @@ header nav .container ul li a {
     color: #fff;
 }
 
-header nav .container ul li:first-child {
+header nav .container ul li:not(:last-child) {
     margin-right: 2rem;
 }
 
@@ -175,7 +175,7 @@ img {
     margin-right: 1.125rem;
 }
 
-.download  {
+.download   {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -207,6 +207,23 @@ img {
 .fa-file-download {
     font-size: 1.5rem;
     margin-left:1rem;
+}
+.save {
+    display: flex;
+    justify-content: center;
+}
+.save button{
+    width: 370px;
+    margin-top: 0.687rem;
+}
+.save button a{
+    font-size: 1.5rem;
+    text-decoration: none;
+    color:#ff7f00;
+    transition: .3s;
+}
+.save button a:hover{
+    color:#00b315;
 }
 
 /************** mobile nav ***********************/
@@ -372,6 +389,44 @@ footer h1{
 .keywords button:hover{
     color:rgb(255, 68, 0);
 }
+/******************** saved memes ************************/
+#saved-memes{
+    display:none;
+    max-width:1200px;
+    min-height:500px;
+    margin:auto;
+}
+.memes{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 400px;
+    padding:1rem;
+    grid-gap:1rem;
+    
+}
+.memes img{
+    
+}
+.memes button {
+    width: 100%;
+    height: 1.2rem;
+    border: none;
+    border-radius: 12px;
+    background-color:  #ffffff;
+    margin-top:1rem;
+    display:flex;
+    justify-content: center;
+}
+.memes button a{
+    color: #ff7f00;
+    text-decoration: none;
+    font-size: 1rem;
+}
+.memes button a:hover{
+    color: #00b315;
+    
+}
+
 /************* meida ***********************/
 
 @media(max-width:1230px) {
@@ -390,8 +445,12 @@ footer h1{
     .keywords button{
         margin-left:1rem;
     }
-    .meme-editor{
-        padding-left:1rem;
+
+    .memes{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .memes img{
+        width:100%;
     }
 }
 
@@ -441,6 +500,12 @@ footer h1{
     .keywords button{
         margin-left:.2rem;
     }
+    .memes{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .memes img{
+        width:100%;
+    }
 }
 
 @media(max-width:530px){
@@ -458,6 +523,16 @@ footer h1{
     .keywords button{
         
         margin-bottom:1rem;
+    }
+
+    .memes{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .memes img{
+        width:100%;
+    }
+    .memes button{
+        
     }
 }
 
@@ -480,5 +555,7 @@ footer h1{
         margin-left:.5rem;
         margin-bottom:1rem;
     }
-
+    .memes{
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

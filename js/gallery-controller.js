@@ -9,7 +9,8 @@ var gIsSearching = false;
 function onInit() {
     gCanvas = document.querySelector('#my-canvas');
     gCtx = gCanvas.getContext('2d');
-    renderFontSizes()
+    renderFontSizes();
+    renderSavedMemes();
     renderGallery();
     renderMeme();
 }
@@ -43,11 +44,13 @@ function toggleEditor() {
     var editor = document.querySelector('.meme-editor');
     var profile = document.querySelector('.profile');
     var search = document.querySelector('.input-container');
+    var elSavedMemesEditor = document.querySelector('#saved-memes');
     if (!gEditorIsOn) {
         editor.style.display = 'none';
         gallery.style.display = 'block';
         profile.style.display = 'flex';
         search.style.display = 'block';
+        elSavedMemesEditor.style.display = 'none';
     }
     else {
         editor.style.display = 'flex';

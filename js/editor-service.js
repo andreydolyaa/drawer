@@ -106,6 +106,8 @@ function setFontFamily(val) {
 }
 
 
+
+
 // function selectLine() {
 //     //     console.log(gMeme.findIndex(gMeme.lines[gMeme.selectedLineIdx]));
 //     //    return gMeme.lines[gMeme.selectedLineIdx];
